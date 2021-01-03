@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>Bar chart with D3.js</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+	<div id='layout'>
+		<!-- <h2>Bar chart example</h2> -->
+		<div id='container'>
+			<svg />
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		const margin = 60;
+		const width = 1000 - 2*margin;
+		const height = 600 - 2*margin;
+
+		const svg = d3.select('svg');
+		const chart = svg.append('g').attrs('transform',`translate(${margin},${margin})`)
+	</script>
+</body>
+</html>
