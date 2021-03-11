@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>D3 Page Template</title>
+    <script type="text/javascript" src="../d3.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const dataset = [0, 5, 10, 15, 20, 25]
+
+        d3.select('body')
+        .selectAll("p")
+        .data(dataset) //Something to remember once the .data method the next chains are executed as many times there are values in the dataset
+        .enter() //To create new, data-bound elements, you must use enter(). This method looks at the current DOM selection, and then at the data being handed to it. If there are more data values than corresponding DOM elements, then enter() creates a new placeholder element on which you can work your magic. It then hands off a reference to this new placeholder to the next step in the chain
+        .append("p")
+        .text("Yo para")
+    </script>
+</body>
+
+</html>

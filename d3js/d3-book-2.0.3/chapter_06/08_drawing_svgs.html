@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>D3: Creating an empty SVG</title>
+	<script type="text/javascript" src="../d3.js"></script>
+	<style type="text/css">
+		div.bar {
+			display: inline-block;
+			width: 20px;
+			height: 75px;
+			background-color: teal;
+			margin-left: 2px;
+		}
+	</style>
+</head>
+
+<body>
+	<script type="text/javascript">
+		const height = 200, width = 500, barPadding = 1;
+		const dataset = [5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+			11, 12, 15, 20, 18, 17, 16, 18, 23, 25];
+		const svg = d3.selectAll("body")
+			.append("svg")
+			.attr('height', height)
+			.attr("width", width);
+
+		svg.selectAll("rect")
+			.data(dataset)
+			.enter()
+			.append("rect")
+			.attr("x", (d, i) => i * (width / dataset.length))
+			.attr("y", d => height - d * 5)
+			.attr("height", d => d * 5)
+			.attr("width", (d, i) => (width / dataset.length - 1))
+			.attr("fill", d => `rgb(0,0,${d * 10})`)
+	</script>
+</body>
+
+</html>

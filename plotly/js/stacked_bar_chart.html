@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
+    <title>Stacked Bar Chart</title>
+  </head>
+  <body>
+    <div
+      id="barChart"
+      style="height: 600; width: 400; border: 1px black solid"
+    ></div>
+    <script type="text/javascript">
+      const barChartDiv = document.getElementById("barChart");
+      const sanFranZoo = {
+        x: ["giraffes", "orangutans", "monkeys"],
+        y: [20, 14, 23],
+        name: "SF Zoo",
+        type: "bar",
+      };
+      const lAZoo = {
+        x: ["giraffes", "orangutans", "monkeys"],
+        y: [12, 18, 29],
+        name: "LA Zoo",
+        type: "bar",
+      };
+      const data = [sanFranZoo, lAZoo];
+      const layout = { barmode: "stack" };
+      Plotly.newPlot(barChartDiv, data, layout);
+
+      barChartDiv.on("plotly_hover", (data) => {
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>
